@@ -8,6 +8,13 @@ import {Contact} from './pages/contact.jsx'
 import {Services} from './pages/services.jsx'
 import {Blogs} from './pages/blogs.jsx'
 import {Navbar} from './components/navbar.jsx'
+import Footer from './components/footer.jsx'
+import {WebDevelopment} from './pages/services/web-development.jsx'
+import {SeoServices} from './pages/services/seo-services.jsx'
+import {DigitalAdvertising} from './pages/services/digital-advertising.jsx'
+import {DigitalPR} from './pages/services/digital-pr.jsx'
+import {GraphicDesign} from './pages/services/graphic-design.jsx'
+import {ContentWriting} from './pages/services/content-writing.jsx'
 
 // Module-level variable to track if initial loading is done
 let hasLoadedOnce = false;
@@ -35,8 +42,15 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/loading" element={<LoadingScreen/>} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/seo-services" element={<SeoServices />} />
+        <Route path="/services/digital-advertising" element={<DigitalAdvertising />} />
+        <Route path="/services/digital-pr" element={<DigitalPR />} />
+        <Route path="/services/graphic-design" element={<GraphicDesign />} />
+        <Route path="/services/content-writing" element={<ContentWriting />} />
         <Route path="/blogs" element={<Blogs />} />
       </Routes>
+      <Footer />
     </>
   );
 }

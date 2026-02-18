@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,42 +10,49 @@ const servicesData = [
         title: "Web Development",
         description: "Custom websites and web applications built with modern technologies for optimal performance.",
         features: ["Responsive Design", "Fast Loading", "SEO Optimized", "Secure & Scalable"],
-        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format&fit=crop",
+        route: "/services/web-development"
     },
     {
         title: "Graphic Design",
         description: "Eye-catching visual designs that communicate your brand message effectively.",
         features: ["Logo Design", "Brand Identity", "Marketing Materials", "UI/UX Design"],
-        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop",
+        route: "/services/graphic-design"
     },
     {
         title: "SEO Services",
         description: "Comprehensive SEO strategies to boost your online visibility and drive organic traffic.",
         features: ["Keyword Research", "On-Page SEO", "Link Building", "Analytics & Reporting"],
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+        route: "/services/seo-services"
     },
     {
         title: "Content Writing",
         description: "Engaging, SEO-friendly content that resonates with your audience and drives conversions.",
         features: ["Blog Posts", "Website Copy", "Product Descriptions", "Social Media Content"],
-        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop",
+        route: "/services/content-writing"
     },
     {
         title: "Digital Advertising",
         description: "Strategic ad campaigns that maximize ROI across all major advertising platforms.",
         features: ["Google Ads", "Social Media Ads", "Display Advertising", "Remarketing"],
-        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&auto=format&fit=crop",
+        route: "/services/digital-advertising"
     },
     {
         title: "Digital PR",
         description: "Build brand authority and trust through strategic media coverage and online reputation.",
         features: ["Media Outreach", "Press Coverage", "Brand Mentions", "Authority Backlinks"],
-        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop",
+        route: "/services/digital-pr"
     }
 ];
 
-function FlipCard({ title, description, features, image, index }) {
+function FlipCard({ title, description, features, image, index, route }) {
     const cardRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const card = cardRef.current;
@@ -75,6 +83,7 @@ function FlipCard({ title, description, features, image, index }) {
         <div 
             ref={cardRef}
             className="group perspective-1000 w-full h-[280px] sm:h-[320px] md:h-[380px] cursor-pointer"
+            onClick={() => navigate(route)}
         >
             <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
                 {/* Front */}
@@ -142,7 +151,7 @@ function FlipCard({ title, description, features, image, index }) {
     );
 }
 
-export default function ServiceCards() {
+export default function ServiceCards(){
     return (
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-4 sm:px-8 md:px-16 lg:px-24 py-8 sm:py-12 md:py-16 max-w-7xl mx-auto">
             {servicesData.map((service, index) => (

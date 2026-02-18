@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
-        <footer className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-950 text-white font-manrope">
+        <footer className="bg-black text-white font-manrope">
             <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
                     {/* Left Column - Brand & Contact */}

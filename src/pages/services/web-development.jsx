@@ -269,12 +269,12 @@ export function WebDevelopment() {
                     }
                 `}
             </style>
-            <div className="bg-gradient-to-br from-gray-50 via-white to-blue-50 font-manrope overflow-hidden">
+            <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope overflow-hidden">
             {/* ===== HERO SECTION ===== */}
             <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
                 {/* Animated background elements */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
+                    <div className="absolute top-20 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
                     <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 15s ease-in-out infinite', animationDelay: '2s' }} />
                     
                     {/* Subtle grid pattern */}
@@ -334,14 +334,14 @@ export function WebDevelopment() {
                         </button>
                     </div>
                 </div>
-                <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-blue-100 via-gray-50 to-transparent pointer-events-none'></div>
+                <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-pink-100 via-pink-50 to-transparent pointer-events-none'></div>
             </section>
 
             {/* ===== FEATURES SECTION - Light Theme ===== */}
-            <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+            <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                 {/* Animated background decoration */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
+                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
                     <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite', animationDelay: '2s' }} />
                     
                     {/* Animated grid pattern */}
@@ -355,9 +355,6 @@ export function WebDevelopment() {
                 <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
                     {/* Section header */}
                     <div className="text-center mb-16">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            What We Offer
-                        </span>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
                             <span className="text-gray-800">Powerful </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">Features</span>
@@ -386,18 +383,15 @@ export function WebDevelopment() {
             </section>
 
             {/* ===== DEVELOPMENT PROCESS SECTION ===== */}
-            <section id="process-section" className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+            <section id="process-section" className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                 {/* Animated background elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
-                    <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
+                    <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
                 </div>
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                     {/* Section header */}
                     <div className="text-center mb-16">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            How We Work
-                        </span>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
                             <span className="text-gray-800">Our Development </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">Process</span>
@@ -421,9 +415,6 @@ export function WebDevelopment() {
                 <div className="w-full">
                     {/* Section header */}
                     <div className="mt-12 text-center mb-12 px-6 md:px-12">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            Our Work
-                        </span>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
                             <span className="text-gray-800">Featured </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">Projects</span>
@@ -449,10 +440,10 @@ export function WebDevelopment() {
             </section>
 
             {/* ===== CTA SECTION ===== */}
-            <section ref={ctaRef} className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
+            <section ref={ctaRef} className="relative py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
                 {/* Ambient bg */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite' }} />
+                    <div className="absolute top-10 left-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite' }} />
                     <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 12s ease-in-out infinite', animationDelay: '4s' }} />
                 </div>
 

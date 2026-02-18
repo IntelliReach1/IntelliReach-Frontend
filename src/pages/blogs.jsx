@@ -319,10 +319,10 @@ export function Blogs() {
 
     return (
         <>
-            <section className="relative bg-gradient-to-br from-gray-100 via-white to-blue-100 min-h-screen w-full overflow-hidden">
+            <section className="relative bg-gradient-to-br from-pink-50 via-white to-purple-50 min-h-screen w-full overflow-hidden">
                 {/* Animated background orbs */}
-                <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-20 right-10 w-80 h-80 bg-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-20 left-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16">
                     {/* Hero Title */}
@@ -400,7 +400,8 @@ export function Blogs() {
                         </div>
                     )}
                 </div>
-                <div className='absolute top-0 left-0 right-0 w-full h-20 bg-gradient-to-b from-blue-100 via-blue-100/50 to-transparent pointer-events-none z-0'></div>
+                <div className='absolute top-0 left-0 right-0 w-full h-20 bg-gradient-to-b from-pink-100 via-pink-100/50 to-transparent pointer-events-none z-0'></div>
+                <div className='absolute bottom-0 left-0 right-0 w-full h-32 bg-gradient-to-b from-transparent via-pink-200/30 to-purple-200 pointer-events-none z-0'></div>
             </section>
         </>
     );

@@ -48,11 +48,6 @@ const team = [
         role: "COO & Co-Founder",
         image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop"
     },
-    {
-        name: "Maaz Anwar",
-        role: "CMO & Co-Founder",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop"
-    }
 ];
 
 const whyChooseUs = [
@@ -520,18 +515,15 @@ export function About() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen w-full overflow-hidden">
-                <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-20 right-10 w-80 h-80 bg-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            <section className="relative bg-gradient-to-b from-pink-50 via-white to-pink-50 min-h-screen w-full overflow-hidden">
+                <div className="absolute top-20 left-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20">
                     <div ref={titleRef} className="text-center mb-16">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            About Us
-                        </span>
                         <h1 className="text-5xl md:text-7xl font-bold mb-6">
                             <span className="text-gray-800">Empowering Businesses with </span>
-                            <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-pink-600 via-pink-500 to-orange-500 bg-clip-text text-transparent">
                                 Smart Digital Solutions
                             </span>
                         </h1>
@@ -659,22 +651,19 @@ export function About() {
                         </div>
                     </div>
                 </div>
-                <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-blue-100 via-gray-50 to-transparent pointer-events-none'></div>
+                <div className='absolute left-0 top-0 right-0 w-full h-64 bg-gradient-to-b from-pink-100 via-pink-50 to-transparent pointer-events-none'></div>
             </section>
 
             {/* Core Values - Interactive Horizontal Sections */}
-            <section className="relative py-20 bg-gradient-to-br from-white via-blue-50/30 to-orange-50/30 overflow-hidden">
+            <section className="relative py-20 bg-gradient-to-b from-pink-50 via-pink-100/30 to-pink-50/30 overflow-hidden">
                 {/* Animated background */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" />
+                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
                 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            Our Philosophy
-                        </span>
                         <h2 className="text-4xl md:text-6xl font-bold mb-4">
                             <span className="text-gray-800">Our Core </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
@@ -696,15 +685,12 @@ export function About() {
             </section>
 
             {/* Team Section */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+            <section className="py-20 bg-gradient-to-b from-pink-50 via-white to-pink-50">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            Our Leadership
-                        </span>
                         <h2 className="text-4xl md:text-6xl font-bold mb-4">
                             <span className="text-gray-800">Meet Our </span>
-                            <span className="bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-blue-600 to-orange-400 bg-clip-text text-transparent">
                                 Team
                             </span>
                         </h2>
@@ -722,7 +708,7 @@ export function About() {
             </section>
 
             {/* Why Choose Us - Dark Bento Grid */}
-            <section className="py-20 bg-gray-100/50 relative overflow-hidden">
+            <section className="py-20 bg-gradient-to-b from-pink-50 via-pink-50 to-pink-100 relative overflow-hidden">
                 {/* Subtle background effects */}
                 <div className="absolute inset-0">
                     <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
@@ -731,9 +717,6 @@ export function About() {
                 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
-                        <span className="text-orange-400 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                            What Sets Us Apart
-                        </span>
                         <h2 className="text-4xl md:text-6xl font-bold mb-4">
                             <span className="text-black">Why Choose </span>
                             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400 bg-clip-text text-transparent">
@@ -793,7 +776,7 @@ export function About() {
             </section>
 
             {/* CTA Section - Light theme matching the page */}
-            <section className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
+            <section className="relative py-24 bg-gradient-to-b from-pink-100 via-white to-pink-100 overflow-hidden">
                 {/* Ambient background orbs */}
                 <div className="absolute inset-0">
                     <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />

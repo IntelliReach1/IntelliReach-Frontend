@@ -311,13 +311,13 @@ export function Contact() {
     }, []);
 
     return (
-        <div className="bg-gradient-to-br from-gray-50 via-white to-blue-50 font-manrope">
+        <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope">
             {/* ===== HERO SECTION ===== */}
             <section ref={heroRef} className="relative pt-32 pb-16 overflow-hidden">
                 {/* Ambient orbs */}
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-20 left-1/4 w-80 h-80 bg-blue-400/8 rounded-full blur-3xl" />
-                    <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-orange-400/8 rounded-full blur-3xl" />
+                    <div className="absolute top-20 left-1/4 w-80 h-80 bg-pink-400/8 rounded-full blur-3xl" />
+                    <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-purple-400/8 rounded-full blur-3xl" />
                 </div>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center">
@@ -343,7 +343,7 @@ export function Contact() {
                     {/* Animated gradient line */}
                     <div className="contact-hero-line mx-auto w-full max-w-lg h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent origin-center" />
                 </div>
-                <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-blue-100 via-gray-50 to-transparent pointer-events-none'></div>
+                <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-pink-100 via-pink-50 to-transparent pointer-events-none'></div>
             </section>
 
             {/* ===== CONTACT INFO CARDS ===== */}
@@ -624,11 +624,11 @@ export function Contact() {
             </section>
 
             {/* ===== CTA SECTION ===== */}
-            <section className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
+            <section className="relative py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
                 {/* Ambient bg */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-10 left-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl animate-pulse" />
+                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">

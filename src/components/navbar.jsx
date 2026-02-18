@@ -136,14 +136,13 @@ export function Navbar({ loading = false }) {
 
     return (
         <>
-            <div className='bg-gradient-to-b from-blue-200 via-blue-100/80 to-blue-100 flex items-center justify-between px-4 py-3 md:py-4 relative z-[100]'>
+            <div className='bg-gradient-to-b from-purple-300 via-purple-300/80 to-pink-100 flex items-center justify-between px-4 py-3 md:py-4 relative z-[100]'>
                 <div
                     onClick={() => { navigate('/') }}
                     ref={titleRef}
-                    className="cursor-pointer z-[120] fixed top-1/2 left-1/2 flex text-gray-800 font-bold text-3xl select-none md:static md:top-auto md:left-auto "
+                    className="cursor-pointer z-[120] fixed top-1/2 left-1/2 flex items-center text-gray-800 font-bold text-3xl select-none md:static md:top-auto md:left-auto "
                 >
-                    <div> Intelli</div>
-                    <div className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent "> Reach</div>
+                    <img className="w-24 h-20 md:w-16 md:h-12 mr-2" src="logo.png" alt="logo" />
                 </div>
                 <nav ref={navbarRef} className='hidden md:flex items-center mt-3 gap-9 z-30 text-gray-600 text-lg flex-1 justify-center'>
                     <span className='pl-56'></span>

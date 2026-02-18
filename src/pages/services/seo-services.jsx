@@ -259,12 +259,12 @@ export function SeoServices() {
                     }
                 `}
                 </style>
-                <div className="bg-gradient-to-br from-gray-50 via-white to-green-50 font-manrope overflow-hidden">
+                <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope overflow-hidden">
                     {/* ===== HERO SECTION ===== */}
                     <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
                         <div className="absolute inset-0 pointer-events-none">
-                            <div className="absolute top-20 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
-                            <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 15s ease-in-out infinite', animationDelay: '2s' }} />
+                            <div className="absolute top-20 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
+                            <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 15s ease-in-out infinite', animationDelay: '2s' }} />
 
                             <div className="absolute inset-0 opacity-[0.02]" style={{
                                 backgroundImage: 'linear-gradient(rgba(34,197,94,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,0.2) 1px, transparent 1px)',
@@ -317,14 +317,14 @@ export function SeoServices() {
                                 </button>
                             </div>
                         </div>
-                        <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-blue-100 via-gray-50 to-transparent pointer-events-none'></div>
+                        <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-pink-100 via-gray-50 to-transparent pointer-events-none'></div>
                     </section>
 
                     {/* ===== FEATURES SECTION ===== */}
-                    <section className="py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
+                    <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                         <div className="absolute inset-0 pointer-events-none">
-                            <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
-                            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite', animationDelay: '2s' }} />
+                            <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
+                            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite', animationDelay: '2s' }} />
 
                             <div className="absolute inset-0 opacity-[0.015]" style={{
                                 backgroundImage: 'linear-gradient(rgba(34,197,94,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,0.2) 1px, transparent 1px)',
@@ -335,9 +335,6 @@ export function SeoServices() {
 
                         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                             <div className="text-center mb-16">
-                                <span className="text-green-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                                    What We Offer
-                                </span>
                                 <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
                                     <span className="text-gray-800">Comprehensive </span>
                                     <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">SEO Services</span>
@@ -376,16 +373,13 @@ export function SeoServices() {
                     </section>
 
                     {/* ===== SEO PROCESS SECTION ===== */}
-                    <section id="process-section" className="py-20 bg-gradient-to-br from-gray-50 via-white to-green-50 relative overflow-hidden">
+                    <section id="process-section" className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                         <div className="absolute inset-0 pointer-events-none">
-                            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
-                            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
+                            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
+                            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
                         </div>
                         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                             <div className="text-center mb-16">
-                                <span className="text-green-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                                    How We Work
-                                </span>
                                 <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
                                     <span className="text-gray-800">Our SEO </span>
                                     <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Process</span>
@@ -404,12 +398,9 @@ export function SeoServices() {
                     </section>
 
                     {/* ===== PROJECTS SECTION ===== */}
-                    <section className="py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
+                    <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                             <div className="text-center mb-12">
-                                <span className="text-green-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                                    Success Stories
-                                </span>
                                 <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
                                     <span className="text-gray-800">SEO </span>
                                     <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Results</span>
@@ -434,10 +425,10 @@ export function SeoServices() {
                     </section>
 
                     {/* ===== CTA SECTION ===== */}
-                    <section ref={ctaRef} className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-green-50 overflow-hidden">
+                    <section ref={ctaRef} className="relative py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
                         <div className="absolute inset-0">
-                            <div className="absolute top-10 left-10 w-72 h-72 bg-green-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite' }} />
-                            <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 12s ease-in-out infinite', animationDelay: '4s' }} />
+                            <div className="absolute top-10 left-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite' }} />
+                            <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 12s ease-in-out infinite', animationDelay: '4s' }} />
                         </div>
 
                         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">

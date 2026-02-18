@@ -114,8 +114,8 @@ function ProcessItem({ step, index, isHovered, onHover }) {
                 <div className={`transition-all duration-500 ${
                     !isMobile && isHovered === index ? 'mb-6' : 'mb-2 sm:mb-3'
                 }`}>
-                    <span className={`font-bold bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent transition-all duration-500 ${
-                        !isMobile && isHovered === index ? 'text-5xl' : 'text-2xl sm:text-3xl'
+                    <span className={`font-bold bg-gradient-to-r from-pink-300 to-purple-500 bg-clip-text text-transparent transition-all duration-500 ${
+                        !isMobile && isHovered === index ? 'text-7xl' : 'text-2xl sm:text-3xl'
                     }`}>
                         {step.number}
                     </span>
@@ -183,9 +183,6 @@ export default function Process() {
         <div className="py-16 px-4 md:px-8">
             {/* Title */}
             <div ref={titleRef} className="text-center mb-8 sm:mb-12">
-                <span className="text-orange-500 text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-                    How We Work
-                </span>
                 <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
                     <span className="text-gray-800">Our </span>
                     <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">

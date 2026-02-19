@@ -283,7 +283,7 @@ export default function Home() {
     return (
         <>
             <section>
-                <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+                <div className="relative min-h-[70vh] md:min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
                     <div
                         ref={revealOverlayRef}
                         className="fixed inset-0 z-40 bg-white pointer-events-none"
@@ -295,7 +295,7 @@ export default function Home() {
                     />
                     {/* gradient overlay */}
                     <div className="absolute inset-0 z-10 bg-gradient-to-br from-white/40 via-transparent to-blue-100/30 pointer-events-none" />
-                    <div ref={maintitleref} className="pt-56 md:pt-0 px-4 sm:px-6 relative font-bold md:mt-32 tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl flex w-full bg-gradient-to-r from-gray-800 via-gray-700 to-blue-600 bg-clip-text text-transparent justify-center z-30 pb-4">
+                    <div ref={maintitleref} className="pt-32 md:pt-0 px-4 sm:px-6 relative font-bold md:mt-32 tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl flex w-full bg-gradient-to-r from-gray-800 via-gray-700 to-blue-600 bg-clip-text text-transparent justify-center z-30 pb-4">
                         <div className="flex flex-wrap gap-2 sm:gap-4 font-manrope justify-center text-center" >Transform 
                             <div className="font-normal playfair-italic">Your</div>  <span>Digital Presence</span></div>
                     </div>
@@ -303,7 +303,7 @@ export default function Home() {
                         We build high-impact digital solutions with modern web development, smart SEO, powerful
                         content, and visually striking design that delivers measurable growth.
                     </p>
-                    <div className="flex flex-wrap gap-4 sm:gap-8 justify-center items-center px-4">
+                    <div className="mt-16 flex flex-wrap gap-4 sm:gap-8 justify-center items-center px-4">
                         <button className="hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] flex rounded-[36px] z-30 relative font-inter px-4 sm:px-5 py-3 sm:py-4 mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white transition-transform duration-200 font-bold text-sm sm:text-base shadow-lg shadow-blue-300/50 hover:shadow-blue-400/60 transition hover:scale-110 ">Get Started   <svg className='pl-2' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg></button>
                         <button className="hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.4)] z-30 flex bg-white/80 backdrop-blur-sm rounded-[32px] text-blue-600 font-bold border border-blue-400 shadow-lg transition-transform duration-200 hover:scale-110 mt-4 px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base hover:bg-white">Learn More<svg className='pl-1' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#2563eb"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" /></svg></button>
                     </div>
@@ -345,19 +345,19 @@ export default function Home() {
                     `}</style>
 
                     <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-pink-100 via-pink-100/80 via-pink-100/50 to-transparent pointer-events-none z-20"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-pink-300/30 to-purple-300 pointer-events-none z-20"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent via-gray-100/30 to-blue-100 pointer-events-none z-20"></div>
                 </div>
 
             </section>
             <section ref={section2Ref}>
-                <div className="w-full min-h-screen bg-white text-gray-800 relative">
+                <div className="w-full min-h-[85vh] md:min-h-screen bg-white text-gray-800 relative">
                     {/* GridMotion as background */}
                     <div className="absolute inset-0 z-0 opacity-60">
                         <GridMotion items={items} gradientColor="white" />
                     </div>
 
                     {/* Content overlay */}
-                    <div className="relative z-20 flex min-h-screen pointer-events-none">
+                    <div className="relative z-20 flex min-h-[85vh] md:min-h-screen pointer-events-none">
                         <div >
                             <div className="mt-20 ml-12 md:mt-28 md:ml-20 pointer-events-auto">
                                 <div ref={section2title}>
@@ -375,15 +375,15 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="absolute z-10 top-0 left-0 right-0 h-32 bg-gradient-to-b from-purple-300 via-pink-300/50 to-transparent pointer-events-none"></div>
-                    <div className="absolute z-10 h-12 bottom-0 left-0 right-0 md:h-28 bg-gradient-to-b from-transparent via-pink-100/50 to-pink-100 pointer-events-none"></div>
-                    <div className="w-[85vw] absolute z-0 top-0 left-0 bottom-0 md:w-[70vw] bg-gradient-to-r from-purple-300 via-pink-200/80 via-pink-100 to-transparent "></div>
+                    <div className="absolute z-10 top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-100 via-gray-100/50 to-transparent pointer-events-none"></div>
+                    <div className="absolute z-10 h-12 bottom-0 left-0 right-0 md:h-28 bg-gradient-to-b from-transparent via-gray-100/50 to-white pointer-events-none"></div>
+                    <div className="w-[85vw] absolute z-0 top-0 left-0 bottom-0 md:w-[70vw] bg-gradient-to-r from-white via-blue-100/70 via-white to-transparent "></div>
                 </div>
             </section>
             <section>
                 <div className="relative w-full overflow-hidden pb-20">
                     {/* Premium light gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-white to-pink-50" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-pink-100 to-blue-50" />
                     
                     {/* Animated gradient orbs */}
                     <div className="absolute top-20 left-10 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl animate-pulse" />
@@ -399,7 +399,7 @@ export default function Home() {
                     
                     {/* Content */}
                     <div className="relative z-10">
-                        <div className="flex flex-col w-full items-center pt-28 pb-8">
+                        <div className="flex flex-col w-full items-center pt-16 md:pt-28 pb-8">
                             <div className="flex gap-4 items-center text-5xl md:text-7xl font-bold">
                                 <span className="text-gray-800">Our</span>
                                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">Expertise</span>
@@ -417,7 +417,7 @@ export default function Home() {
                     </div>
                     
                     {/* Top gradient fade */}
-                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-pink-100 via-pink-50/80 to-transparent z-0 pointer-events-none" />
+                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/50 via-blue-50 to-transparent z-0 pointer-events-none" />
                 </div>
             </section>
 

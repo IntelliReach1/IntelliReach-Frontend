@@ -142,7 +142,7 @@ export function Navbar({ loading = false }) {
                     ref={titleRef}
                     className="cursor-pointer z-[120] fixed top-1/2 left-1/2 flex items-center text-gray-800 font-bold text-3xl select-none md:static md:top-auto md:left-auto "
                 >
-                    <img className="w-24 h-20 md:w-16 md:h-12 mr-2" src="logo.png" alt="logo" />
+                    <img className="w-16 h-14 md:w-24 md:h-20 mr-2" src="logo.png" alt="logo" />
                 </div>
                 <nav ref={navbarRef} className='hidden md:flex items-center mt-3 gap-9 z-30 text-gray-600 text-lg flex-1 justify-center'>
                     <span className='pl-56'></span>

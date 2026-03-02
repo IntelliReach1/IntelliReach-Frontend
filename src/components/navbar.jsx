@@ -1,16 +1,8 @@
-
-import { useEffect, useRef } from 'react';
-import gsap from "gsap";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-// Module-level variable - persists across re-renders/navigation but resets on page refresh
-let hasAnimatedOnce = false;
-
-export function Navbar({ loading = false }) {
-    const titleRef = useRef(null);
+export function Navbar() {
     const drawerRef = useRef(null);
-    const navbarRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -29,273 +21,218 @@ export function Navbar({ loading = false }) {
         { name: 'Content Writing', path: '/services/content-writing' },
     ];
 
-    // logo Animation - runs only once
+    // Close drawer on route change
     useEffect(() => {
-        if (loading === true) return; // wait until content is shown
-        const el = titleRef.current;
-        if (!el) return;
-        
-        // Skip animation if already animated
-        if (hasAnimatedOnce) {
-            gsap.set(el, {
-                position: 'relative',
-                top: 'auto',
-                left: 'auto',
-                xPercent: 0,
-                yPercent: 0,
-                scale: 1.2,
-            });
-            return;
-        }
-        
-        const a = window.innerWidth;
-        const isMobile = window.matchMedia('(max-width: 767px)').matches;
-        // Scope animations to this element and clean up on unmount
-        const ctx = gsap.context(() => {
-            // Center relative to the viewport so Y movement is visible
-            gsap.set(el, {
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                xPercent: -50,
-                yPercent: -50,
-                scale: 3,
-            });
+        setMenuOpen(false);
+        setMobileServicesOpen(false);
+    }, [location.pathname]);
 
-            gsap.to(el, {
-                delay: 1.5,
-                duration: 1,
-                ease: 'power3.inOut',
-                top: 30,
-                left: a * 0.065,
-                xPercent: 0,
-                yPercent: 0,
-                scale: 1.2,
-                onComplete: () => {
-                    hasAnimatedOnce = true;
-                }
-            });
-        }, el);
-
-        return () => ctx.revert();
-    }, [loading]);
-
-
-    //navbar items animation - runs only once
+    // Prevent body scroll when drawer is open
     useEffect(() => {
-        if (loading) return;
-        const navbar = navbarRef.current;
-        if (!navbar) return;
-        const navItems = navbar.querySelectorAll('span');
-        
-        // Skip animation if already animated
-        if (hasAnimatedOnce) {
-            gsap.set(navItems, { y: 0, opacity: 1 });
-            return;
-        }
-        
-        gsap.fromTo(navItems, {
-            y: -50,
-            opacity: 0,
-        }, {
-            delay: 1.8,
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            stagger: 0.1,
-            overwrite: "auto",
-            clearProps: "transform",
-            onComplete: () => {
-                gsap.set(navItems, { clearProps: "all" });
-            }
-        });
-    }, [loading]);
-
-    // Mobile Drawer Animation
-    useEffect(() => {
-        const el = drawerRef.current;
-        if (!el) return;
-
-        if (menuOpen) {
-            gsap.to(el, {
-                x: 0,
-                duration: 0.6,
-                ease: "power3.out",
-            });
-        } else {
-            gsap.to(el, {
-                x: "100%",
-                duration: 0.6,
-                ease: "power3.in",
-            });
-        }
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
     }, [menuOpen]);
-    
-    
+
+    const navLinkStyle = (path) =>
+        `relative cursor-pointer text-sm lg:text-base font-medium transition-all duration-300
+        after:content-[""] after:absolute after:left-0 after:-bottom-1
+        after:h-[2px] after:rounded-full after:transition-all after:duration-300
+        ${isActive(path)
+            ? 'text-cyan-200 after:w-full after:bg-cyan-300 drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]'
+            : 'text-white/90 hover:text-cyan-200 after:w-0 hover:after:w-full after:bg-cyan-300'
+        }`;
+
+    const mobileLinkStyle = (path) =>
+        `block w-full text-left px-4 py-3 text-base font-medium rounded-xl transition-all duration-200
+        ${isActive(path)
+            ? 'text-cyan-200 bg-white/15'
+            : 'text-white hover:text-cyan-200 hover:bg-white/10'
+        }`;
 
     return (
         <>
-            <div className='bg-gradient-to-b from-purple-300 via-purple-300/80 to-pink-100 flex items-center justify-between px-4 py-3 md:py-4 relative z-[100]'>
-                <div
-                    onClick={() => { navigate('/') }}
-                    ref={titleRef}
-                    className="cursor-pointer z-[120] fixed top-1/2 left-1/2 flex items-center text-gray-800 font-bold text-3xl select-none md:static md:top-auto md:left-auto "
-                >
-                    <img className="w-16 h-14 md:w-24 md:h-20 mr-2" src="logo.png" alt="logo" />
+            {/* ── NAVBAR ─────────────────────────────────────────────────── */}
+            <header className="sticky top-0 z-[100] bg-gradient-to-r from-[#5B21B6] via-[#C026D3] to-[#FB7185] shadow-lg shadow-black/20 ">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex items-center justify-between h-16 md:h-20">
+
+                        {/* Logo */}
+                        <div
+                            onClick={() => navigate('/')}
+                            className="flex items-center gap-2 cursor-pointer select-none flex-shrink-0 "
+                        >
+                            <img
+                                className="w-12 h-12 md:w-28 md:h-16 object-contain "
+                                src="logo.png"
+                                alt="IntelliReach logo"
+                            />
+                        </div>
+
+                        {/* Desktop Nav — centred */}
+                        <nav className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 -translate-x-1/2">
+                            <span className={navLinkStyle('/')} onClick={() => navigate('/')}>Home</span>
+                            <span className={navLinkStyle('/about')} onClick={() => navigate('/about')}>About</span>
+
+                            {/* Services Dropdown */}
+                            <div
+                                className="relative"
+                                onMouseEnter={() => setServicesDropdownOpen(true)}
+                                onMouseLeave={() => setServicesDropdownOpen(false)}
+                            >
+                                <span
+                                    className={`relative cursor-pointer text-sm lg:text-base font-medium transition-all duration-300 flex items-center gap-1
+                                    ${isServicesActive()
+                                        ? 'text-cyan-200 drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]'
+                                        : 'text-white/90 hover:text-[#67E8F9]'
+                                    }`}
+                                >
+                                    Services
+                                    <svg
+                                        className={`w-4 h-4 transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180' : ''}`}
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+
+                                {/* Dropdown panel */}
+                                <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-200
+                                    ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+                                >
+                                    {serviceLinks.map((service, idx) => (
+                                        <div
+                                            key={idx}
+                                            onClick={() => { navigate(service.path); setServicesDropdownOpen(false); }}
+                                            className={`px-5 py-3 cursor-pointer text-sm font-medium transition-all duration-150 border-b last:border-b-0 border-gray-100
+                                            ${location.pathname === service.path
+                                                ? 'bg-cyan-50 text-cyan-600'
+                                                : 'text-gray-700 hover:bg-cyan-50 hover:text-cyan-600'
+                                            }`}
+                                        >
+                                            {service.name}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <span className={navLinkStyle('/blogs')} onClick={() => navigate('/blogs')}>Blogs</span>
+                            <span className={navLinkStyle('/contact')} onClick={() => navigate('/contact')}>Contact</span>
+                        </nav>
+
+                        {/* Desktop CTA */}
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="hidden md:block px-5 py-2 rounded-full text-white text-sm lg:text-base font-medium whitespace-nowrap
+                            bg-white/10 border border-white/30 transition-all duration-300
+                            hover:bg-white/20 hover:scale-105 hover:shadow-[0_0_20px_rgba(47,107,255,0.5)]"
+                        >
+                            Get In Touch
+                        </button>
+
+                        {/* Hamburger — mobile only */}
+                        <button
+                            onClick={() => setMenuOpen(true)}
+                            aria-label="Open menu"
+                            className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <line x1="3" y1="6" x2="21" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                                <line x1="3" y1="12" x2="21" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                                <line x1="3" y1="18" x2="21" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                            </svg>
+                        </button>
+
+                    </div>
                 </div>
-                <nav ref={navbarRef} className='hidden md:flex items-center mt-3 gap-9 z-30 text-gray-600 text-lg flex-1 justify-center'>
-                    <span className='pl-56'></span>
-                    <span 
-                        className={`relative cursor-pointer transition-colors after:content-[""] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${isActive('/') ? 'text-blue-700 after:w-full after:bg-blue-700' : 'hover:text-blue-500'}`} 
-                        onClick={() => { navigate('/') }}
-                    >Home</span>
-                    <span 
-                        className={`relative cursor-pointer transition-colors after:content-[""] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${isActive('/about') ? 'text-blue-700 after:w-full after:bg-blue-700' : 'hover:text-blue-500'}`} 
-                        onClick={() => { navigate('/about') }}
-                    >About</span>
-                    
-                    {/* Services Dropdown */}
-                    <div 
-                        className="relative z-[9999]"
-                        onMouseEnter={() => setServicesDropdownOpen(true)}
-                        onMouseLeave={() => setServicesDropdownOpen(false)}
+            </header>
+
+            {/* ── MOBILE DRAWER ──────────────────────────────────────────── */}
+            {/* Backdrop */}
+            <div
+                onClick={() => setMenuOpen(false)}
+                className={`fixed inset-0 z-[140] bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden
+                    ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            />
+
+            {/* Drawer panel */}
+            <div
+                ref={drawerRef}
+                className={`fixed top-0 right-0 h-full w-[80%] max-w-[300px] z-[150] md:hidden
+                    bg-gradient-to-r from-[#5B21B6] to-[#C026D3]
+                    shadow-2xl flex flex-col
+                    transition-transform duration-300 ease-in-out
+                    ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            >
+                {/* Drawer header */}
+                <div className="flex items-center justify-between px-5 py-4 border-b border-white/20">
+                    <img className="w-10 h-10 object-contain" src="logo.png" alt="logo" />
+                    <button
+                        onClick={() => setMenuOpen(false)}
+                        aria-label="Close menu"
+                        className="text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors"
                     >
-                        <span 
-                            className={`relative cursor-pointer transition-colors flex items-center gap-1 after:content-[""] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${isServicesActive() ? 'text-blue-700 after:w-full after:bg-blue-700' : 'hover:text-blue-500'}`}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <line x1="5" y1="5" x2="19" y2="19" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                            <line x1="19" y1="5" x2="5" y2="19" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Drawer links */}
+                <nav className="flex-1 overflow-y-auto px-3 py-4 flex flex-col gap-1">
+                    <button className={mobileLinkStyle('/')} onClick={() => navigate('/')}>Home</button>
+                    <button className={mobileLinkStyle('/about')} onClick={() => navigate('/about')}>About</button>
+
+                    {/* Services accordion */}
+                    <div>
+                        <button
+                            onClick={() => setMobileServicesOpen(prev => !prev)}
+                            className={`flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-xl transition-all duration-200
+                                ${isServicesActive() ? 'text-cyan-200 bg-white/15' : 'text-white hover:text-cyan-200 hover:bg-white/10'}`}
                         >
                             Services
-                            <svg 
-                                className={`w-4 h-4 transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180' : ''}`} 
-                                fill="none" 
-                                viewBox="0 0 24 24" 
-                                stroke="currentColor" 
-                                strokeWidth={2}
+                            <svg
+                                className={`w-4 h-4 transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                             </svg>
-                        </span>
+                        </button>
 
-                        {/* Dropdown Menu */}
-                        <div 
-                            className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-white rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden transition-all duration-300 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
-                        >
-                            {serviceLinks.map((service, idx) => (
-                                <div
-                                    key={idx}
-                                    onClick={() => { navigate(service.path); setServicesDropdownOpen(false); }}
-                                    className={`px-5 py-3 cursor-pointer transition-all duration-200 border-b border-gray-100 last:border-b-0 ${location.pathname === service.path ? 'bg-blue-50 text-blue-700' : 'hover:bg-blue-50/50 hover:text-blue-600'}`}
-                                >
-                                    <span className="text-sm font-medium">{service.name}</span>
-                                </div>
-                            ))}
+                        <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                            <div className="ml-3 mt-1 flex flex-col gap-0.5 border-l-2 border-white/20 pl-3">
+                                {serviceLinks.map((service, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => navigate(service.path)}
+                                        className={`text-left px-3 py-2.5 text-sm rounded-lg transition-all duration-200
+                                            ${location.pathname === service.path
+                                                ? 'text-cyan-200 bg-white/10'
+                                                : 'text-white/80 hover:text-cyan-200 hover:bg-white/10'
+                                            }`}
+                                    >
+                                        {service.name}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                    
-                    <span 
-                        className={`relative cursor-pointer transition-colors after:content-[""] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${isActive('/blogs') ? 'text-blue-700 after:w-full after:bg-blue-700' : 'hover:text-blue-500'}`} 
-                        onClick={() => { navigate('/blogs') }}
-                    >Blogs</span>
-                    <span 
-                        className={`relative cursor-pointer transition-colors after:content-[""] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 after:w-0 hover:after:w-full ${isActive('/contact') ? 'text-blue-700 after:w-full after:bg-blue-700' : 'hover:text-blue-500'}`} 
-                        onClick={() => { navigate('/contact') }}
-                    >Contact</span>
+
+                    <button className={mobileLinkStyle('/blogs')} onClick={() => navigate('/blogs')}>Blogs</button>
+                    <button className={mobileLinkStyle('/contact')} onClick={() => navigate('/contact')}>Contact</button>
                 </nav>
-                <div className='hidden md:block text-md mt-3 pr-4 z-40'>
-                    <button onClick={() => navigate('/contact')} className='hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] px-6 py-2 rounded-full text-white bg-gradient-to-r from-blue-500 to-cyan-500 border-none shadow-lg hover:shadow-blue-300/50 transition'>Get In Touch</button>
-                </div>
-                {/* Hamburger (mobile only) */}
-                <button
-                    onClick={() => setMenuOpen(true)}
-                    className="md:hidden fixed backdrop-blur-md top-8 right-5 z-[120] text-gray-800"
-                >
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" >
-                        <line x1="3" y1="6" x2="21" y2="6" stroke="#1f2937" strokeWidth="2" />
-                        <line x1="3" y1="12" x2="21" y2="12" stroke="#1f2937" strokeWidth="2" />
-                        <line x1="3" y1="18" x2="21" y2="18" stroke="#1f2937" strokeWidth="2" />
-                    </svg>
-                </button>
-            </div >
 
-            {/* ---------------- BACKDROP ---------------- */}
-            {
-                menuOpen && (
-                    <div
-                        onClick={() => setMenuOpen(false)}
-                        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90] md:hidden"
-                    />
-                )
-            }
-
-            {/* ---------------- MOBILE DRAWER ---------------- */}
-            <div
-                ref={drawerRef}
-                className="fixed top-[72px] right-0 h-[calc(100vh-72px)] w-[75vw] bg-gradient-to-br from-white via-blue-50/30 to-orange-50/20 backdrop-blur-xl shadow-2xl z-[95]
-                   translate-x-full md:hidden flex flex-col gap-5 p-6 text-gray-700 text-lg overflow-y-auto border-l-2 border-blue-200/50"
-            >
-                {/* Decorative gradient orbs */}
-                <div className="absolute top-10 right-10 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl pointer-events-none"></div>
-                <div className="absolute bottom-20 left-10 w-40 h-40 bg-orange-300/10 rounded-full blur-2xl pointer-events-none"></div>
-
-                <button
-                    onClick={() => setMenuOpen(false)}
-                    className="self-end text-sm text-gray-600 hover:text-gray-900 font-medium mb-2"
-                >
-                    Close ✕
-                </button>
-
-                <span className={`text-center cursor-pointer transition-all duration-200 py-3 px-4 rounded-xl ${isActive('/') ? 'bg-blue-500 text-white shadow-lg' : 'hover:bg-blue-100/50'}`} onClick={() => { navigate('/'); setMenuOpen(false); }}>Home</span>
-                <span className={`text-center cursor-pointer transition-all duration-200 py-3 px-4 rounded-xl ${isActive('/about') ? 'bg-blue-500 text-white shadow-lg' : 'hover:bg-blue-100/50'}`} onClick={() => { navigate('/about'); setMenuOpen(false); }}>About</span>
-                
-                {/* Mobile Services Accordion */}
-                <div className="flex flex-col">
-                    <div 
-                        className={`text-center cursor-pointer transition-all duration-200 flex items-center justify-center gap-2 py-3 px-4 rounded-xl ${isServicesActive() ? 'bg-blue-500 text-white shadow-lg' : 'hover:bg-blue-100/50'}`}
-                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                {/* Drawer CTA */}
+                <div className="px-4 py-5 border-t border-white/20">
+                    <button
+                        onClick={() => navigate('/contact')}
+                        className="w-full py-3 rounded-full text-white font-semibold text-sm
+                        bg-white/15 border border-white/30 transition-all duration-300
+                        hover:bg-white/25 active:scale-95"
                     >
-                        <span>Services</span>
-                        <svg 
-                            className={`w-4 h-4 transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180' : ''}`} 
-                            fill="none" 
-                            viewBox="0 0 24 24" 
-                            stroke="currentColor" 
-                            strokeWidth={2}
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </div>
-                    
-                    {/* Submenu */}
-                    <div 
-                        className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? 'max-h-96 mt-3' : 'max-h-0'}`}
-                    >
-                        <div className="flex flex-col gap-2 bg-white/40 backdrop-blur-sm rounded-xl p-3 border border-blue-100">
-                            {serviceLinks.map((service, idx) => (
-                                <div
-                                    key={idx}
-                                    onClick={() => { navigate(service.path); setMenuOpen(false); setMobileServicesOpen(false); }}
-                                    className={`text-center py-2 px-3 rounded-lg text-sm cursor-pointer transition-all duration-200 ${location.pathname === service.path ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-md' : 'hover:bg-blue-100 hover:text-blue-700'}`}
-                                >
-                                    {service.name}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                        Get In Touch
+                    </button>
                 </div>
-                
-                <span className={`text-center cursor-pointer transition-all duration-200 py-3 px-4 rounded-xl ${isActive('/blogs') ? 'bg-blue-500 text-white shadow-lg' : 'hover:bg-blue-100/50'}`} onClick={() => { navigate('/blogs'); setMenuOpen(false); }}>Blogs</span>
-                <span className={`text-center cursor-pointer transition-all duration-200 py-3 px-4 rounded-xl ${isActive('/contact') ? 'bg-blue-500 text-white shadow-lg' : 'hover:bg-blue-100/50'}`} onClick={() => { navigate('/contact'); setMenuOpen(false); }}>Contact</span>
-                
-                {/* Get In Touch Button */}
-                <button
-                    onClick={() => { navigate('/contact'); setMenuOpen(false); }}
-                    className="mt-4 py-3 px-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-full shadow-lg hover:shadow-blue-400/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
-                >
-                    Get In Touch
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </button>
             </div>
         </>
     );

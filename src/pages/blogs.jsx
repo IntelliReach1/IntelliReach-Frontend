@@ -205,9 +205,9 @@ function BlogCard({ blog, index }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
                 
                 {/* Category badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-xs font-bold">
+                {/* <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-xs font-bold">
                     {blog.category}
-                </div>
+                </div> */}
 
                 {/* Hover overlay with read more */}
                 <div className={`absolute inset-0 bg-blue-600/95 flex items-center justify-center transition-all duration-500 ${

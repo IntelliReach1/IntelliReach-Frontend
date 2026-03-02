@@ -6,13 +6,15 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
                     {/* Left Column - Brand & Contact */}
-                    <div className="space-y-6">
-                        <div>
-                            <h2 className="text-4xl font-bold mb-2">
-                                <span className="text-white">Intelli</span>
-                                <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Reach</span>
-                            </h2>
-                            <p className="text-gray-400 text-sm">Where Intelligence Meets Growth</p>
+                    <div className="space-y-1">
+                        <div className="">
+                            
+                           <img
+  className="w-20 h-20 md:w-28 md:h-28 object-contain "
+  src="logo_footer.png"
+  alt="IntelliReach logo"
+/>
+                           
                         </div>
                         
                         <p className="text-gray-300 leading-relaxed text-sm">
@@ -119,7 +121,7 @@ export default function Footer() {
                             </a>
 
                             <a 
-                                href="https://instagram.com" 
+                                href="https://www.instagram.com/intellireach.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 hover:border-transparent transition-all duration-300 hover:scale-110 group"
@@ -130,7 +132,7 @@ export default function Footer() {
                             </a>
 
                             <a 
-                                href="https://linkedin.com" 
+                                href="https://www.linkedin.com/company/intellireach-in/posts/?feedView=all" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 hover:scale-110 group"

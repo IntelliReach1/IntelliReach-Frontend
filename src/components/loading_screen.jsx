@@ -165,30 +165,19 @@ export default function LoadingScreen({ onComplete }) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-orange-300/15 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '2s' }} />
       
       {/* Logo */}
+     
       <motion.div
-        initial={{ opacity: 0, scale: 0.8, rotateY: -180 }}
-        animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-        transition={{ duration: 0.8, type: "spring" }}
-        className="flex items-center gap-3 mb-12 relative z-10"
-      >
-        <motion.div 
-          className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 flex items-center justify-center shadow-lg shadow-purple-400/50"
-          animate={{ 
-            boxShadow: [
-              '0 10px 30px rgba(168, 85, 247, 0.5)',
-              '0 10px 30px rgba(236, 72, 153, 0.5)',
-              '0 10px 30px rgba(251, 146, 60, 0.5)',
-              '0 10px 30px rgba(168, 85, 247, 0.5)',
-            ]
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-        >
-          <span className="text-white font-bold text-xl">IR</span>
-        </motion.div>
-        <span className="text-2xl font-semibold text-gray-800">
-          Intelli<span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">Reach</span>
-        </span>
-      </motion.div>
+  initial={{ opacity: 0, scale: 0.8, rotateY: -180 }}
+  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+  transition={{ duration: 0.8, type: "spring" }}
+  className="flex items-center justify-center mb-16 relative z-10"
+>
+  <img
+    className="w-32 md:w-44 object-contain"
+    src="logo_loading_screen.png"
+    alt="IntelliReach logo"
+  />
+</motion.div>
 
       {/* Progress Container */}
       <div className="relative flex flex-col items-center z-10">

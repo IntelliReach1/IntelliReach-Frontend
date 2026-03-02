@@ -41,12 +41,12 @@ const team = [
     {
         name: "Kuldeep Singh",
         role: "CEO & Founder",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop"
+        image: "kuldeep.jpeg"
     },
     {
         name: "Animesh Singh",
         role: "COO & Co-Founder",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop"
+        image: "animesh.jpeg"
     },
 ];
 

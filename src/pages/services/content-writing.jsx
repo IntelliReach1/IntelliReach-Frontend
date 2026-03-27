@@ -81,18 +81,18 @@ export function ContentWriting() {
             </style>
             <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope overflow-hidden">
                 {/* Hero Section */}
-                <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
+                <section ref={heroRef} className="relative pt-20 pb-20 overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-20 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
                         <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 15s ease-in-out infinite', animationDelay: '2s' }} />
                         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(rgba(20,184,166,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(20,184,166,0.2) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
                     </div>
                     <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center">
-                        <div className="content-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-300/30 backdrop-blur-sm mb-8">
+                        {/* <div className="content-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-300/30 backdrop-blur-sm mb-8">
                             <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
                             <span className="text-sm font-semibold text-teal-700">Content Writing</span>
-                        </div>
-                        <h1 className="content-hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight font-playfair">
+                        </div> */}
+                        <h1 className="content-hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight font-playfair">
                             <span className="block text-gray-800">Craft Compelling</span>
                             <span className="block bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Stories</span>
                         </h1>
@@ -124,14 +124,14 @@ export function ContentWriting() {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                <section className="py-10 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
                         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite', animationDelay: '2s' }} />
                     </div>
                     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        <div className="text-center mb-10">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                 <span className="text-gray-800">Professional </span>
                                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Content Services</span>
                             </h2>
@@ -159,14 +159,14 @@ export function ContentWriting() {
                 </section>
 
                 {/* Process Section */}
-                <section id="process-section" className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                <section id="process-section" className="py-8 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
                         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
                     </div>
                     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        <div className="text-center mb-10">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                 <span className="text-gray-800">Our Content </span>
                                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Process</span>
                             </h2>
@@ -181,10 +181,10 @@ export function ContentWriting() {
                 </section>
 
                 {/* Projects Section */}
-                <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                <section className="py-10 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="text-center mb-12">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        <div className="text-center mb-8">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                 <span className="text-gray-800">Content </span>
                                 <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">Showcase</span>
                             </h2>
@@ -205,7 +205,7 @@ export function ContentWriting() {
                 </section>
 
                 {/* CTA Section */}
-                <section ref={ctaRef} className="relative py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
+                <section ref={ctaRef} className="relative py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
                     <div className="absolute inset-0">
                         <div className="absolute top-10 left-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite' }} />
                         <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 12s ease-in-out infinite', animationDelay: '4s' }} />

@@ -261,7 +261,7 @@ export function SeoServices() {
                 </style>
                 <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope overflow-hidden">
                     {/* ===== HERO SECTION ===== */}
-                    <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
+                    <section ref={heroRef} className="relative pt-16 pb-20 overflow-hidden">
                         <div className="absolute inset-0 pointer-events-none">
                             <div className="absolute top-20 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
                             <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 15s ease-in-out infinite', animationDelay: '2s' }} />
@@ -273,14 +273,14 @@ export function SeoServices() {
                         </div>
 
                         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center">
-                            <div className="seo-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-300/30 backdrop-blur-sm mb-8">
+                            {/* <div className="seo-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-300/30 backdrop-blur-sm mb-8">
                                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                                 <span className="text-sm font-semibold text-green-700">SEO Services</span>
-                            </div>
+                            </div> */}
 
-                            <h1 className="seo-hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight font-playfair">
+                            <h1 className="seo-hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight font-playfair">
                                 <span className="block text-gray-800">Rank Higher</span>
-                                <span className="block bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                <span className="block bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent pt-2">
                                     Get More Traffic
                                 </span>
                             </h1>
@@ -321,7 +321,7 @@ export function SeoServices() {
                     </section>
 
                     {/* ===== FEATURES SECTION ===== */}
-                    <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                    <section className="py-8 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                         <div className="absolute inset-0 pointer-events-none">
                             <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
                             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite', animationDelay: '2s' }} />
@@ -334,8 +334,8 @@ export function SeoServices() {
                         </div>
 
                         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                            <div className="text-center mb-16">
-                                <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                            <div className="text-center mb-10">
+                                <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                     <span className="text-gray-800">Comprehensive </span>
                                     <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">SEO Services</span>
                                 </h2>
@@ -373,14 +373,14 @@ export function SeoServices() {
                     </section>
 
                     {/* ===== SEO PROCESS SECTION ===== */}
-                    <section id="process-section" className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                    <section id="process-section" className="py-10 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                         <div className="absolute inset-0 pointer-events-none">
                             <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
                             <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
                         </div>
                         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                            <div className="text-center mb-16">
-                                <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                            <div className="text-center mb-12">
+                                <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                     <span className="text-gray-800">Our SEO </span>
                                     <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Process</span>
                                 </h2>
@@ -400,8 +400,8 @@ export function SeoServices() {
                     {/* ===== PROJECTS SECTION ===== */}
                     <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                            <div className="text-center mb-12">
-                                <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                            <div className="text-center mb-10">
+                                <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                     <span className="text-gray-800">SEO </span>
                                     <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Results</span>
                                 </h2>

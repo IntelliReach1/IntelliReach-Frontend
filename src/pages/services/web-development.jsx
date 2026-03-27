@@ -271,7 +271,7 @@ export function WebDevelopment() {
             </style>
             <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope overflow-hidden">
             {/* ===== HERO SECTION ===== */}
-            <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
+            <section ref={heroRef} className="relative pt-12 pb-20 overflow-hidden">
                 {/* Animated background elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-20 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
@@ -286,13 +286,13 @@ export function WebDevelopment() {
 
                 <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center">
                     {/* Badge */}
-                    <div className="webdev-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-300/30 backdrop-blur-sm mb-8">
+                    {/* <div className="webdev-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-300/30 backdrop-blur-sm mb-8">
                         <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                         <span className="text-sm font-semibold text-blue-700">Premium Web Development</span>
-                    </div>
+                    </div> */}
 
                     {/* Title */}
-                    <h1 className="webdev-hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight font-playfair">
+                    <h1 className="webdev-hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight font-playfair">
                         <span className="block text-gray-800">Build Stunning</span>
                         <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
                             Web Experiences
@@ -338,7 +338,7 @@ export function WebDevelopment() {
             </section>
 
             {/* ===== FEATURES SECTION - Light Theme ===== */}
-            <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+            <section className="py-10 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                 {/* Animated background decoration */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
@@ -354,8 +354,8 @@ export function WebDevelopment() {
 
                 <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
                     {/* Section header */}
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                    <div className="text-center mb-110">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                             <span className="text-gray-800">Powerful </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">Features</span>
                         </h2>
@@ -383,7 +383,7 @@ export function WebDevelopment() {
             </section>
 
             {/* ===== DEVELOPMENT PROCESS SECTION ===== */}
-            <section id="process-section" className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+            <section id="process-section" className="py-8 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                 {/* Animated background elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
@@ -391,8 +391,8 @@ export function WebDevelopment() {
                 </div>
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                     {/* Section header */}
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                    <div className="text-center mb-10">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                             <span className="text-gray-800">Our Development </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">Process</span>
                         </h2>
@@ -414,8 +414,8 @@ export function WebDevelopment() {
             <section className="py-0 overflow-hidden">
                 <div className="w-full">
                     {/* Section header */}
-                    <div className="mt-12 text-center mb-12 px-6 md:px-12">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                    <div className="mt-12 text-center mb-10 px-6 md:px-12">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                             <span className="text-gray-800">Featured </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">Projects</span>
                         </h2>

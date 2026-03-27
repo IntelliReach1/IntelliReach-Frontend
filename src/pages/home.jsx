@@ -290,7 +290,7 @@ export default function Home() {
                         className="fixed inset-0 z-40 bg-white pointer-events-none"
                     />
                     <img
-                        src="main.jpg"
+                        src="main.png"
                         alt="background"
                         className="absolute inset-0 w-full h-full object-cover opacity-60 z-0"
                     />
@@ -365,10 +365,10 @@ export default function Home() {
                     {/* Content overlay */}
                     <div className="relative z-20 flex min-h-[85vh] md:min-h-screen pointer-events-none">
                         <div >
-                            <div className="mt-20 ml-12 md:mt-28 md:ml-20 pointer-events-auto">
+                            <div className="mt-32 ml-12 md:mt-28 md:ml-20 pointer-events-auto">
                                 <div ref={section2title}>
                                     <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Design That Speaks.</h2>
-                                    <h2 className="text-3xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">Delivery That Converts.</h2>
+                                    <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-12 pb-2 bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">Delivery That Converts.</h2>
                                 </div>
                                 <div ref={section2subtitle}>
                                     <p className="w-[80vw] font-inter text-lg mt-4 md:w-[40vw] md:text-xl mb-2 text-gray-600">Crafting Digital Success Stories Since 2022. Today, we're proud to be a trusted partner for companies worldwide. </p>
@@ -405,19 +405,19 @@ export default function Home() {
                     
                     {/* Content */}
                     <div className="relative z-10">
-                        <div className="flex flex-col w-full items-center pt-16 md:pt-28 pb-8">
-                            <div className="flex gap-4 items-center text-5xl md:text-7xl font-bold">
+                        <div className="flex flex-col w-full items-center pt-16 md:pt-10 pb-2">
+                            <div className="flex gap-4 items-center text-4xl md:text-6xl font-bold">
                                 <span className="text-gray-800">Our</span>
                                 <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">Expertise</span>
                             </div>
-                            <p className="mt-6 text-gray-600 text-lg max-w-2xl text-center px-4">
+                            <p className="mt-2 text-gray-600 text-lg max-w-2xl text-center px-4">
                                 Premium digital solutions crafted with precision and passion to elevate your brand.
                             </p>
                         </div>
                         <ServiceCards />
                         
                         {/* Process Section */}
-                        <div className="mt-4">
+                        <div className="mt-1">
                             <Process />
                         </div>
                     </div>
@@ -428,18 +428,18 @@ export default function Home() {
             </section>
 
             {/* ===== BLOGS SECTION ===== */}
-            <section className="relative py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
+            <section className="relative py-6 bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
                 {/* Background orbs */}
                 <div className="absolute top-10 left-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
                 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                     {/* Section header */}
-                    <div className="text-center mb-12">
-                        <span className="text-purple-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
+                    <div className="text-center mb-6 md:mb-12">
+                        <span className="text-purple-500 text-sm font-semibold tracking-[0.3em] uppercase mb-2 block">
                             Latest Insights
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-2">
                             <span className="text-gray-800">From Our </span>
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Blog</span>
                         </h2>
@@ -449,7 +449,7 @@ export default function Home() {
                     </div>
 
                     {/* Blog Cards Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10">
                         {blogsPreview.map((blog, index) => (
                             <HomeBlogCard key={blog.id} blog={blog} index={index} />
                         ))}
@@ -475,222 +475,3 @@ export default function Home() {
         </>
     )
 }
-
-// Contact Form Section Component
-// function ContactFormSection() {
-//     const navigate = useNavigate();
-//     const formRef = useRef(null);
-//     const [formData, setFormData] = useState({
-//         name: '',
-//         email: '',
-//         phone: '',
-//         service: '',
-//         message: '',
-//     });
-//     const [isSubmitting, setIsSubmitting] = useState(false);
-//     const [submitted, setSubmitted] = useState(false);
-
-//     const handleChange = (e) => {
-//         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-//     };
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         setIsSubmitting(true);
-//         setTimeout(() => {
-//             setIsSubmitting(false);
-//             setSubmitted(true);
-//             setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-//             setTimeout(() => setSubmitted(false), 4000);
-//         }, 1500);
-//     };
-
-//     useEffect(() => {
-//         const el = formRef.current;
-//         if (!el) return;
-
-//         gsap.fromTo(el,
-//             { y: 60, opacity: 0 },
-//             {
-//                 y: 0, opacity: 1,
-//                 duration: 0.9,
-//                 ease: "power3.out",
-//                 scrollTrigger: {
-//                     trigger: el,
-//                     start: "top 80%",
-//                     toggleActions: "play none none none",
-//                 },
-//             }
-//         );
-//     }, []);
-
-//     return (
-//         <section className="py-20 bg-gray-900 relative overflow-hidden">
-//             {/* Background decoration */}
-//             <div className="absolute inset-0">
-//                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-//                 <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
-//                 <div className="absolute inset-0 opacity-[0.03]" style={{
-//                     backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-//                     backgroundSize: '60px 60px'
-//                 }} />
-//             </div>
-
-//             <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
-//                 {/* Section header */}
-//                 <div className="text-center mb-12">
-//                     <span className="text-pink-400 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
-//                         Get In Touch
-//                     </span>
-//                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
-//                         <span className="text-white">Send Us a </span>
-//                         <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Message</span>
-//                     </h2>
-//                     <p className="text-gray-400 text-lg max-w-xl mx-auto">
-//                         Have a project in mind? Let's talk about how we can help you grow.
-//                     </p>
-//                 </div>
-
-//                 <div ref={formRef}>
-//                     <form onSubmit={handleSubmit} className="space-y-6">
-//                         {/* Name & Email row */}
-//                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                             <div className="group">
-//                                 <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-purple-400 transition-colors duration-300">
-//                                     Full Name
-//                                 </label>
-//                                 <input
-//                                     type="text"
-//                                     name="name"
-//                                     value={formData.name}
-//                                     onChange={handleChange}
-//                                     required
-//                                     placeholder="Your name"
-//                                     className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-//                                 />
-//                             </div>
-//                             <div className="group">
-//                                 <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-purple-400 transition-colors duration-300">
-//                                     Email Address
-//                                 </label>
-//                                 <input
-//                                     type="email"
-//                                     name="email"
-//                                     value={formData.email}
-//                                     onChange={handleChange}
-//                                     required
-//                                     placeholder="you@example.com"
-//                                     className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-//                                 />
-//                             </div>
-//                         </div>
-
-//                         {/* Phone & Service row */}
-//                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                             <div className="group">
-//                                 <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-purple-400 transition-colors duration-300">
-//                                     Phone Number
-//                                 </label>
-//                                 <input
-//                                     type="tel"
-//                                     name="phone"
-//                                     value={formData.phone}
-//                                     onChange={handleChange}
-//                                     placeholder="+91 98765 43210"
-//                                     className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-//                                 />
-//                             </div>
-//                             <div className="group">
-//                                 <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-purple-400 transition-colors duration-300">
-//                                     Service Needed
-//                                 </label>
-//                                 <select
-//                                     name="service"
-//                                     value={formData.service}
-//                                     onChange={handleChange}
-//                                     className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 appearance-none cursor-pointer"
-//                                     style={{
-//                                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-//                                         backgroundRepeat: 'no-repeat',
-//                                         backgroundPosition: 'right 16px center',
-//                                         backgroundSize: '20px',
-//                                     }}
-//                                 >
-//                                     <option value="" className="bg-gray-900">Select a service</option>
-//                                     <option value="web-development" className="bg-gray-900">Web Development</option>
-//                                     <option value="seo" className="bg-gray-900">SEO Services</option>
-//                                     <option value="graphic-design" className="bg-gray-900">Graphic Design</option>
-//                                     <option value="digital-advertising" className="bg-gray-900">Digital Advertising</option>
-//                                     <option value="content-writing" className="bg-gray-900">Content Writing</option>
-//                                     <option value="digital-pr" className="bg-gray-900">Digital PR</option>
-//                                 </select>
-//                             </div>
-//                         </div>
-
-//                         {/* Message */}
-//                         <div className="group">
-//                             <label className="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-purple-400 transition-colors duration-300">
-//                                 Your Message
-//                             </label>
-//                             <textarea
-//                                 name="message"
-//                                 value={formData.message}
-//                                 onChange={handleChange}
-//                                 required
-//                                 rows={4}
-//                                 placeholder="Tell us about your project..."
-//                                 className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none"
-//                             />
-//                         </div>
-
-//                         {/* Submit Button */}
-//                         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-//                             <div className="relative group/btn inline-block">
-//                                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 rounded-2xl opacity-50 group-hover/btn:opacity-100 blur-lg transition-all duration-500" />
-//                                 <button
-//                                     type="submit"
-//                                     disabled={isSubmitting}
-//                                     className="relative px-10 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 text-white rounded-2xl font-bold text-base shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-3 border border-white/10 disabled:opacity-50 disabled:hover:scale-100"
-//                                 >
-//                                     {isSubmitting ? (
-//                                         <>
-//                                             <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
-//                                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-//                                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-//                                             </svg>
-//                                             Sending...
-//                                         </>
-//                                     ) : (
-//                                         <>
-//                                             Send Message
-//                                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-//                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-//                                             </svg>
-//                                         </>
-//                                     )}
-//                                 </button>
-//                             </div>
-
-//                             {submitted && (
-//                                 <div className="flex items-center gap-2 text-green-400 animate-pulse">
-//                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-//                                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-//                                     </svg>
-//                                     <span className="font-medium text-sm">Message sent successfully!</span>
-//                                 </div>
-//                             )}
-
-//                             <button 
-//                                 type="button"
-//                                 onClick={() => navigate('/contact')}
-//                                 className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-300"
-//                             >
-//                                 Need more options? Visit Contact page →
-//                             </button>
-//                         </div>
-//                     </form>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }

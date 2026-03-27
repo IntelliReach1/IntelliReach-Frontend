@@ -9,22 +9,22 @@ gsap.registerPlugin(ScrollTrigger);
 const contactInfo = [
     {
         title: "Call Us",
-        detail: "+91 93547 81076",
+        detail: "+91 9625961246",
         subDetail: "Mon - Sat, 10am - 7pm",
         image: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=800&auto=format&fit=crop",
-        link: "tel:+919354781076",
+        link: "tel:+919625961246",
     },
     {
         title: "Email Us",
-        detail: "contact@intellireach.in",
+        detail: "connect.intellireach@gmail.com",
         subDetail: "We reply within 24 hours",
         image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&auto=format&fit=crop",
-        link: "mailto:contact@intellireach.in",
+        link: "mailto:connect.intellireach@gmail.com",
     },
     {
         title: "Visit Us",
-        detail: "New Delhi, India",
-        subDetail: "Janakpuri, 110058",
+        detail: "Delhi, India",
+        subDetail: "Delhi, India",
         image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop",
         link: "https://maps.google.com/?q=28.7279396,77.0857464",
     },
@@ -314,7 +314,7 @@ export function Contact() {
     return (
         <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope">
             {/* ===== HERO SECTION ===== */}
-            <section ref={heroRef} className="relative pt-10 pb-12 overflow-hidden">
+            <section ref={heroRef} className="relative pt-10 pb-1 overflow-hidden">
                 {/* Ambient orbs */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-20 left-1/4 w-80 h-80 bg-pink-400/8 rounded-full blur-3xl" />
@@ -323,34 +323,33 @@ export function Contact() {
 
                 <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center">
                     {/* Badge */}
-                    <div className="contact-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 border border-gray-200/60 shadow-sm mb-8 backdrop-blur-sm">
+                    {/* <div className="contact-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 border border-gray-200/60 shadow-sm mb-8 backdrop-blur-sm">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-sm font-medium text-gray-600">Available for projects</span>
-                    </div>
+                    </div> */}
 
                     {/* Title */}
-                    <h1 className="contact-hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                    <h1 className="contact-hero-title text-4xl md:text-6xl lg:text-7xl font-bold md:mb-1 leading-tight">
                         <span className="block text-gray-800">Let's Build</span>
-                        <span className="block pb-5 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
+                        <span className="block pb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent">
                             Something Great
                         </span>
                     </h1>
 
                     {/* Subtitle */}
-                    <p className="contact-hero-subtitle text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-10">
+                    <p className="contact-hero-subtitle text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-1">
                         Have a project in mind? We'd love to hear about it. Reach out and let's turn your vision into reality.
                     </p>
 
                     {/* Animated gradient line */}
-                    <div className="contact-hero-line mx-auto w-full max-w-lg h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent origin-center" />
+                    {/* <div className="contact-hero-line mx-auto w-full max-w-lg h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent origin-center" /> */}
                 </div>
                 <div className='absolute left-0 top-0 right-0 w-full h-32 bg-gradient-to-b from-pink-100 via-pink-50 to-transparent pointer-events-none'></div>
             </section>
 
             {/* ===== CONTACT INFO CARDS ===== */}
-            <section className="py-10 pb-20">
+            <section className="py-4 md:py-4 pb-6 md:pb-20">
                 <div className="max-w-7xl mx-auto px-6 md:px-12">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 gap-3">
                         {contactInfo.map((item, i) => (
                             <ContactCard key={i} item={item} index={i} />
                         ))}
@@ -362,10 +361,10 @@ export function Contact() {
          <ContactForm></ContactForm>
 
             {/* ===== FAQ SECTION ===== */}
-            <section className="py-20">
+            <section className="py-10 md:py-10">
                 <div className="max-w-4xl mx-auto px-6 md:px-12">
                     {/* Header */}
-                    <div className="text-center mb-14">
+                    <div className="text-center mb-8 md:mb-14">
                         <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
                             Common Questions
                         </span>
@@ -391,7 +390,7 @@ export function Contact() {
             </section>
 
             {/* ===== CTA SECTION ===== */}
-            <section className="relative py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
+            <section className="relative py-16 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
                 {/* Ambient bg */}
                 <div className="absolute inset-0">
                     <div className="absolute top-10 left-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl animate-pulse" />
@@ -412,7 +411,7 @@ export function Contact() {
                         <div className="relative group/btn inline-block">
                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 rounded-full opacity-60 group-hover/btn:opacity-100 blur-lg transition-all duration-500" />
                             <a
-                                href="tel:+919354781076"
+                                href="tel:+919625961246"
                                 className="relative px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 text-white rounded-full font-bold text-lg shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-3 border border-white/20"
                             >
                                 Call Us Now
@@ -428,7 +427,7 @@ export function Contact() {
 
                         {/* Secondary button */}
                         <a
-                            href="mailto:contact@intellireach.in"
+                            href="mailto:connect.intellireach@gmail.com"
                             className="px-10 py-5 bg-white border-2 border-gray-200 text-gray-800 rounded-full font-bold text-lg shadow-sm hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:scale-105 inline-flex items-center gap-3"
                         >
                             Email Us

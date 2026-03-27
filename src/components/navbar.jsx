@@ -53,16 +53,16 @@ export function Navbar() {
         <>
             {/* ── NAVBAR ─────────────────────────────────────────────────── */}
             <header className="sticky top-0 z-[100] bg-gradient-to-r from-[#5B21B6] via-[#C026D3] to-[#FB7185] shadow-lg shadow-black/20 ">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16 md:h-20">
+                <div className="max-w-7xl mx-auto px-2">
+                    <div className="flex items-center justify-between h-16 md:h-24">
 
                         {/* Logo */}
                         <div
                             onClick={() => navigate('/')}
-                            className="flex items-center gap-2 cursor-pointer select-none flex-shrink-0 "
+                            className="flex items-center cursor-pointer select-none flex-shrink-0 "
                         >
                             <img
-                                className="w-12 h-12 md:w-28 md:h-16 object-contain "
+                                className="w-18 h-14 md:w-40 md:h-20 object-contain m-2"
                                 src="logo.png"
                                 alt="IntelliReach logo"
                             />
@@ -165,7 +165,7 @@ export function Navbar() {
             >
                 {/* Drawer header */}
                 <div className="flex items-center justify-between px-5 py-4 border-b border-white/20">
-                    <img className="w-10 h-10 object-contain" src="logo.png" alt="logo" />
+                    <img className="w-24 h-16 object-contain" src="logo.png" alt="logo" />
                     <button
                         onClick={() => setMenuOpen(false)}
                         aria-label="Close menu"

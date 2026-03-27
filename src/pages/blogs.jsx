@@ -324,13 +324,13 @@ export function Blogs() {
                 <div className="absolute top-20 left-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16">
+                <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-10">
                     {/* Hero Title */}
-                    <div ref={titleRef} className="text-center mb-12">
-                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">
+                    <div ref={titleRef} className="text-center mb-8">
+                        <span className="text-orange-500 text-sm font-semibold tracking-[0.3em] uppercase mb-2 block">
                             Latest Insights & Blogs
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-2">
                             <span className="text-gray-800">Our </span>
                             <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">
                                 Blog

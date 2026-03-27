@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
-import LoadingScreen from './components/loading_screen.jsx'
 import Home from './pages/home.jsx'
 import { About } from './pages/about.jsx'
 import { Contact } from './pages/contact.jsx'
@@ -15,33 +13,19 @@ import { DigitalAdvertising } from './pages/services/digital-advertising.jsx'
 import { DigitalPR } from './pages/services/digital-pr.jsx'
 import { GraphicDesign } from './pages/services/graphic-design.jsx'
 import { ContentWriting } from './pages/services/content-writing.jsx'
-import ContactForm from './components/ContactForm.jsx'   
-
-let hasLoadedOnce = false;
+import ContactForm from './components/ContactForm.jsx'
 
 function AppContent() {
-  const location = useLocation();
-  const [loading, setLoading] = useState(!hasLoadedOnce && location.pathname === '/');
-
-  const handleLoadingComplete = () => {
-    hasLoadedOnce = true;
-    setLoading(false);
-  };
-
-  if (loading && location.pathname === '/') {
-    return <LoadingScreen onComplete={handleLoadingComplete} />;
-  }
-
   return (
     <>
-      <Navbar loading={loading} />
+      {/* Removed the loading prop from Navbar if it's no longer needed */}
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/contact-form" element={<ContactForm />} /> 
-        <Route path="/loading" element={<LoadingScreen />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/web-development" element={<WebDevelopment />} />
         <Route path="/services/seo-services" element={<SeoServices />} />

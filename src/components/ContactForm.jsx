@@ -129,7 +129,7 @@ function ContactForm() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-xs font-medium text-gray-400 mb-1.5">Phone Number</label>
-                                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className={inputClass} placeholder="+91 98765 43210" />
+                                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className={inputClass} placeholder="+91 98765 43220" />
                             </div>
                             <div>
                                 <label className="block text-xs font-medium text-gray-400 mb-1.5">Service Needed *</label>

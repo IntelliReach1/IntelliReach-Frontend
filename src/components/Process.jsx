@@ -180,16 +180,16 @@ export default function Process() {
     }, []);
 
     return (
-        <div className="py-16 px-4 md:px-8">
+        <div className="py-1 md:py-10 px-4 md:px-8">
             {/* Title */}
             <div ref={titleRef} className="text-center mb-8 sm:mb-12">
-                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-1">
                     <span className="text-gray-800">Our </span>
                     <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent">
                         Process
                     </span>
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
+                <p className="text-lg sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                     <span className="hidden sm:inline">Hover over each step to explore our proven methodology</span>
                     <span className="sm:hidden">Explore our proven methodology</span>
                 </p>

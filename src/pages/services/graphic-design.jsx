@@ -81,18 +81,18 @@ export function GraphicDesign() {
             </style>
             <div className="bg-gradient-to-br from-pink-50 via-white to-purple-50 font-manrope overflow-hidden">
                 {/* Hero Section */}
-                <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
+                <section ref={heroRef} className="relative pt-20 pb-20 overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-20 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 12s ease-in-out infinite' }} />
                         <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'floatSlow 15s ease-in-out infinite', animationDelay: '2s' }} />
                         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(rgba(236,72,153,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(236,72,153,0.2) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
                     </div>
                     <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center">
-                        <div className="design-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500/20 to-yellow-500/20 border border-pink-300/30 backdrop-blur-sm mb-8">
+                        {/* <div className="design-hero-badge inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500/20 to-yellow-500/20 border border-pink-300/30 backdrop-blur-sm mb-8">
                             <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
                             <span className="text-sm font-semibold text-pink-700">Graphic Design</span>
-                        </div>
-                        <h1 className="design-hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight font-playfair">
+                        </div> */}
+                        <h1 className="design-hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-2 leading-tight font-playfair">
                             <span className="block text-gray-800">Create Visual</span>
                             <span className="block bg-gradient-to-r from-pink-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent">Masterpieces</span>
                         </h1>
@@ -124,14 +124,14 @@ export function GraphicDesign() {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                <section className="py-8 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 8s ease-in-out infinite' }} />
                         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/15 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite', animationDelay: '2s' }} />
                     </div>
                     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        <div className="text-center mb-10">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                 <span className="text-gray-800">Creative </span>
                                 <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent">Design Solutions</span>
                             </h2>
@@ -159,14 +159,14 @@ export function GraphicDesign() {
                 </section>
 
                 {/* Process Section */}
-                <section id="process-section" className="py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
+                <section id="process-section" className="py-8 bg-gradient-to-br from-pink-50 via-white to-purple-50 relative overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 9s ease-in-out infinite' }} />
                         <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 11s ease-in-out infinite', animationDelay: '3s' }} />
                     </div>
                     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        <div className="text-center mb-10">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                 <span className="text-gray-800">Our Design </span>
                                 <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent">Process</span>
                             </h2>
@@ -181,10 +181,10 @@ export function GraphicDesign() {
                 </section>
 
                 {/* Projects Section */}
-                <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50 relative overflow-hidden">
+                <section className="py-10 bg-gradient-to-br from-purple-50 via-white to-pink-50 relative overflow-hidden">
                     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-                        <div className="text-center mb-12">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        <div className="text-center mb-10">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">
                                 <span className="text-gray-800">Design </span>
                                 <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent">Showcase</span>
                             </h2>
@@ -205,7 +205,7 @@ export function GraphicDesign() {
                 </section>
 
                 {/* CTA Section */}
-                <section ref={ctaRef} className="relative py-24 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
+                <section ref={ctaRef} className="relative py-20 bg-gradient-to-br from-pink-50 via-white to-purple-50 overflow-hidden">
                     <div className="absolute inset-0">
                         <div className="absolute top-10 left-10 w-72 h-72 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 10s ease-in-out infinite' }} />
                         <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl" style={{ animation: 'pulse-soft 12s ease-in-out infinite', animationDelay: '4s' }} />

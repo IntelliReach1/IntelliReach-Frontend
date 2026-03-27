@@ -613,7 +613,7 @@ export function About() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              That drive Growth and Impact
+              That Drive Growth and Impact
             </p>
           </div>
 
